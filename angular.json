@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Convertr": {
+    "convertr": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,25 +12,23 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "convertr",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Convertr",
+            "outputPath": "dist/convertr",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/@clr"]
+            },
+            "scripts": ["node_modules/@clr/icons/clr-icons.min.js"]
           },
           "configurations": {
             "production": {
@@ -62,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Convertr:build"
+            "browserTarget": "convertr:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Convertr:build:production"
+              "browserTarget": "convertr:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Convertr:build"
+            "browserTarget": "convertr:build"
           }
         },
         "test": {
@@ -83,14 +81,12 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/@clr"]
+            },
+            "scripts": ["node_modules/@clr/icons/clr-icons.min.js"]
           }
         },
         "lint": {
@@ -101,24 +97,23 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Convertr:serve"
+            "devServerTarget": "convertr:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Convertr:serve:production"
+              "devServerTarget": "convertr:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "Convertr"
+    }
+  },
+  "defaultProject": "convertr"
 }

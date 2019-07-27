@@ -1,4 +1,6 @@
-# Convertr
+# convertr
+
+**Unit tests missing, partial form without custom validation**
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 

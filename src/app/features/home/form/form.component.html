@@ -1,0 +1,33 @@
+<ng-container [formGroup]="form">
+
+  <clr-input-container>
+    <label>Name</label>
+    <input clrInput type="text" formControlName="name" />
+    <clr-control-error *ngIf="name.invalid">This field is required!</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label>Url</label>
+    <input clrInput type="text" formControlName="url" />
+    <clr-control-error *ngIf="url.invalid">This field is required!</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label>Telephone</label>
+    <input clrInput type="text" formControlName="telephone" />
+    <clr-control-error *ngIf="telephone.invalid">This field is required!</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label>Address</label>
+    <input clrInput type="text" formControlName="address" />
+    <clr-control-error *ngIf="address.invalid">This field is required!</clr-control-error>
+  </clr-input-container>
+
+  <clr-input-container>
+    <label>Postcode</label>
+    <input clrInput type="text" formControlName="postcode" />
+    <clr-control-error *ngIf="postcode.invalid">This field is required!</clr-control-error>
+  </clr-input-container>
+
+</ng-container>
